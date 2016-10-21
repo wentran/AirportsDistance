@@ -52,108 +52,23 @@ body {
 
 }
 
-nav>.sf-menu {
-  text-align: center;
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
-nav{ position:relative;padding: 0px 0 0 0;}
-.sf-menu ul {position:absolute;top:-999px; display:none;/* left offset of submenus need to match (see below) */}
-.sf-menu li {float:left;position:relative; }
-.sf-menu>li {
-  float: left;
-  position: relative;
-
-}
-
-.sf-menu>li:first-child+li+li {
-  margin-right: 227px;
-}
-
-.sf-menu>li+li {
-  margin-left:58px;
-}
-
-.sf-menu>li:hover, .sf-menu>li.sfHover, .sf-menu>li.current {
-  border-color: #a92c11;
-}
-
-
-.sf-menu>li>a{
-  text-transform: uppercase;
-  font-size: 28px;
-  font-family: 'Pathway Gothic One', sans-serif;
-  color: #fff;
-  position: relative;
-  font-weight: 300px;
-  line-height: 28px;
-  z-index: 999;
-  position: relative;
-}
-
-
-.sf-menu>li.sfHover>a, .sf-menu>li.current>a, .sf-menu>li:hover>a:hover {
-  color: #263555;
-}
-
-
-.sf-menu li ul,.sf-menu li.sfHover>ul{
-
 /*================================>> Dropdown <<========================================*/
 
+.dropdown-container {
 
+      border-radius: 25px;
+      border: 2px solid #73AD21;
+      padding: 20px;
+      margin-top: 50px;
+      width: 70%;
+      height: 30%;
 
-.styled-select {
-   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
-   height: 29px;
-   overflow: hidden;
-   width: 240px;
 }
 
-.styled-select select {
-   background: transparent;
-   border: none;
-   font-size: 14px;
-   height: 29px;
-   padding: 5px; /* If you add too much padding here, the options won't show in IE */
-   width: 268px;
-}
-
-.styled-select.slate {
-   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
-   height: 34px;
-   width: 240px;
-}
-
-.styled-select.slate select {
-   border: 1px solid #ccc;
-   font-size: 16px;
-   height: 34px;
-   width: 268px;
-}
-
-/* -------------------- Rounded Corners */
-.rounded {
-   -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   border-radius: 20px;
-}
-
-.semi-square {
-   -webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
-}
-
-/* -------------------- Colors: Background */
-.slate   { background-color: #ddd; }
-.green   { background-color: #779126; }
-.blue    { background-color: #3b8ec2; }
-.yellow  { background-color: #eec111; }
-.black   { background-color: #000; }
-
-/* -------------------- Colors: Text */
-.slate select   { color: #000; }
-.green select   { color: #fff; }
-.blue select    { color: #fff; }
-.yellow select  { color: #000; }
-.black select   { color: #fff; }
 

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -6,6 +7,36 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
   <script src="flights.js"></script>
+
+
+  <style>
+   select {
+
+      margin: 50px;
+       border: 1px solid #111;
+      background-color: #F8F8FF;
+      width: 150px;
+      padding: 5px 35px 5px 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      text-align: center;
+      height: 34px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+       background: url("images/plane_icon.png") 96% / 15% no-repeat #eee;
+       
+   } 
+   /*target Internet Explorer 9 and Internet Explorer 10:*/
+  @media screen and (min-width:0\0) { 
+      select {
+          background:none;
+          padding: 5px;
+      }
+   }
+
+    </style>
+
 
 </head>
 <body>
@@ -18,25 +49,15 @@
   </div>
 </div>
 </div>
-  <form class="new-chat">
-    <h5>Airport Distance Tracker</h5>
-    <input type="text" name="author" />
-    
-
-    <button type="submit">Get Distance</button>
-  </form>
   
-  <form class='airportsSelected'>
-
-  <div class="styled-select blue semi-square">
+<div class="container">
+<div class="dropdown-container">
     <select id='departingDestination'>
       <option>JFK</option>
       <option>LAX</option>
       <option>PDX</option>
       <option>LAS</option>
     </select>
-  </div>
-    <br><br>
 
     <select id="arrivingDestination">
      <option>JFK</option>
@@ -44,12 +65,27 @@
      <option>PDX</option>
      <option>LAS</option>
    </select>
+   </div>
+
+  <form class="new-chat">
+    <h5>Airport Distance Tracker</h5>
+    <input type="text" name="author" />
+    
+
+    <button type="submit">Get Distance</button>
+  </form>
+
+
+ 
 
    <button type="submit" id="buttonSubmit">Get Distance</button>
    <button type="submit" id="reset">Reset</button>
- </form>
 
- <div class="distanceDisplay"></div>
+
+ <div class="distanceDisplay">
+   
+ </div>
+ </div>
 
  <script type="text/javascript">
 
