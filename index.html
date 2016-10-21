@@ -1,0 +1,80 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Airport Distance Tracker</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script src="flights.js"></script>
+
+</head>
+<body>
+  <form class="new-chat">
+    <h5>Airport Distance Tracker</h5>
+    <input type="text" name="author" />
+    
+
+    <button type="submit">Get Distance</button>
+  </form>
+  
+  <form class='airportsSelected'>
+    <select id='departingDestination'>
+      <option>JFK</option>
+      <option>LAX</option>
+      <option>PDX</option>
+      <option>LAS</option>
+    </select>
+
+    <br><br>
+
+    <select id="arrivingDestination">
+     <option>JFK</option>
+     <option>LAX</option>
+     <option>PDX</option>
+     <option>LAS</option>
+   </select>
+
+   <button type="submit" id="buttonSubmit">Get Distance</button>
+   <button type="submit" id="reset">Reset</button>
+ </form>
+
+ <div class="distanceDisplay"></div>
+
+ <script type="text/javascript">
+
+  // var departingDestination = "Selected Option Text :" + $('#departingDestination').find('option:selected').text();
+  // console.log(departingDestination)
+  $("#buttonSubmit").click( function (e) {
+    e.preventDefault();
+    var arrivingDestination = ($("#arrivingDestination").val());
+    var departingDestination = ($("#departingDestination").val());
+
+    console.log(departingDestination,arrivingDestination)
+    result = IntentMedia.Distances.distance_between_airports(departingDestination,arrivingDestination )
+    console.log('======',result);
+    var $departingAirportDisplay = $('<div class="departingAirport"/>');
+    var $arrivingAirportDisplay = $('<div class="arrivingAirport"/>');
+
+    var distanceDisplay = $('.distanceDisplay');
+    var $distanceResult = $('<div class="distanceResult"/>');
+
+    var route = departingDestination + " "+ 'to'+ " "+arrivingDestination;
+    
+    $departingAirportDisplay.text(route).appendTo(distanceDisplay)
+    $distanceResult.text(result).appendTo(distanceDisplay)
+  });
+
+    //   $("#reset").click( function (e) {
+    //     e.preventDefault();
+    //     var arrivingDestination = ($("#arrivingDestination").val());
+    //     var departingDestination = ($("#departingDestination").val());
+
+    //   console.log(departingDestination,arrivingDestination)
+    //   result = IntentMedia.Distances.distance_between_airports(departingDestination,arrivingDestination )
+    // console.log('======',result);
+    //   });
+
+  </script>
+
+</body>
+</html>

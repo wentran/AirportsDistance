@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+  font: 16px Sans-Serif;
+}
+
+select:nth-of-type(1) {
+  font: 1px Georgia, Serif;
+}
+select:nth-of-type(2) {
+  /* 11px is the break */
+  font: 11px Georgia, Serif;
+}
+select:nth-of-type(3) {
+  /* 16px is the break */
+  font: 16px Georgia, Serif !important;
+}
+select:nth-of-type(4) {
+  border: 0;
+  font: 32px Cursive;
+}
+select:nth-of-type(5) {
+  -webkit-appearance: none;
+  font: 32px Fantasy;
+}
