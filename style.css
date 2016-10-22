@@ -71,7 +71,11 @@ body {
 
 }
 
-
+/* Button
+================================== */
+.btn.btn-dark-blue{background-color: #237fbc; border-color: #237fbc; -webkit-box-shadow: 0 3px 0 #1a5c87; box-shadow: 0 3px 0 #1a5c87;}
+.btn.btn-dark-blue:hover{background-color:#166ea8;}
+.btn.btn-dark-blue:active{ top: 3px; outline: none; -webkit-box-shadow: none; box-shadow: none;}
 /* Tables
 ================================== */
 
