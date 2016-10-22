@@ -82,46 +82,53 @@
   <button type="submit" id="reset">Reset</button>
 
 
-  <div class="distanceDisplay">
-
-  <div class="Rtable Rtable--2cols Rtable--collapse">
-
-    <div style="order:0;" class="Rtable-cell Rtable-cell--head">Routes</div>
-    <div style="order:1;" class="Rtable-cell">Has a sword named Ice</div>
-
-
-    <div style="order:0;" class="Rtable-cell Rtable-cell--head"> Distance</div>
-    <div style="order:1;" class="Rtable-cell">Has a sword named Longclaw</div>
-    </div>
+  <table id="myTable" class="Rtable Rtable--2cols Rtable--collapse">
+  <tr>
+    <td> <div class="Rtable-cell Rtable-cell--alert">Routes </div></td>
+    <td> <div class="Rtable-cell Rtable-cell--highlight">distance</div></td>
+    </tr>
+    </table>
 
 
     
-   </div>
+
   </div>
 </div>
 
 <script type="text/javascript">
 
-  // var departingDestination = "Selected Option Text :" + $('#departingDestination').find('option:selected').text();
-  // console.log(departingDestination)
   $("#buttonSubmit").click( function (e) {
     e.preventDefault();
     var arrivingDestination = ($("#arrivingDestination").val());
     var departingDestination = ($("#departingDestination").val());
+    var table = document.getElementById('myTable');
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+
+    var cell2 = row.insertCell(1);
+
 
     console.log(departingDestination,arrivingDestination)
     result = IntentMedia.Distances.distance_between_airports(departingDestination,arrivingDestination )
     console.log('======',result);
-    var $departingAirportDisplay = $('<div class="departingAirport"/>');
-    var $arrivingAirportDisplay = $('<div class="arrivingAirport"/>');
+  var route = departingDestination + " "+ 'to'+ " "+arrivingDestination;
 
-    var distanceDisplay = $('.distanceDisplay');
-    var $distanceResult = $('<div class="distanceResult"/>');
+  // $('<div class="chat"/>');
+    // cell1 = $('<td> <div class="Rtable-cell Rtable-cell--alert"> </div></td>');
+    // cell2 = $('<td> <div class="Rtable-cell Rtable-cell--alert"> </div></td>');
 
-    var route = departingDestination + " "+ 'to'+ " "+arrivingDestination;
+
+    cell1.innerHTML = route;
+    cell2.innerHTML = result;
+
+    // var $Routes = $("<p></p>");
+    // var $RoutesDisplay = $('.Rtable-cell--dark');
+    // var $distanceResult = $("<div></div>");
+    // var $distanceDisplay = $('.Rtable-cell--highlight');
+
     
-    $departingAirportDisplay.text(route).appendTo(distanceDisplay)
-    $distanceResult.text(result).appendTo(distanceDisplay)
+    // $Routes.text(route).appendTo($RoutesDisplay)
+    // $distanceResult.text(result).appendTo($distanceDisplay)
   });
 
     //   $("#reset").click( function (e) {
