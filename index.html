@@ -12,62 +12,62 @@
   <style>
    select {
 
-      margin: 50px;
-       border: 1px solid #111;
-      background-color: #F8F8FF;
-      width: 150px;
-      padding: 5px 35px 5px 5px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      text-align: center;
-      height: 34px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-       background: url("images/plane_icon.png") 96% / 15% no-repeat #eee;
-       
-   } 
-   /*target Internet Explorer 9 and Internet Explorer 10:*/
-  @media screen and (min-width:0\0) { 
-      select {
-          background:none;
-          padding: 5px;
-      }
-   }
+    margin: 50px;
+    border: 1px solid #111;
+    background-color: #F8F8FF;
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("images/plane_icon.png") 96% / 15% no-repeat #eee;
 
-    </style>
+  } 
+  /*target Internet Explorer 9 and Internet Explorer 10:*/
+  @media screen and (min-width:0\0) { 
+    select {
+      background:none;
+      padding: 5px;
+    }
+  }
+
+</style>
 
 
 </head>
 <body>
-<div class="header">
+  <div class="header">
 
-<div class="for-sticky">
-  <!--LOGO-->
-  <div class="col-md-2 col-xs-6 logo">
-    <a href="index.html"><img alt="logo" class="logo-nav" src="images/aircraft.png"></a>
+    <div class="for-sticky">
+      <!--LOGO-->
+      <div class="col-md-2 col-xs-6 logo">
+        <a href="index.html"><img alt="logo" class="logo-nav" src="images/aircraft.png"></a>
+      </div>
+    </div>
   </div>
-</div>
-</div>
   
-<div class="container">
-<div class="dropdown-container">
-    <select id='departingDestination'>
-      <option>JFK</option>
-      <option>LAX</option>
-      <option>PDX</option>
-      <option>LAS</option>
-    </select>
+  <div class="container">
+    <div class="dropdown-container">
+      <select id='departingDestination'>
+        <option>JFK</option>
+        <option>LAX</option>
+        <option>PDX</option>
+        <option>LAS</option>
+      </select>
 
-    <select id="arrivingDestination">
-     <option>JFK</option>
-     <option>LAX</option>
-     <option>PDX</option>
-     <option>LAS</option>
-   </select>
+      <select id="arrivingDestination">
+       <option>JFK</option>
+       <option>LAX</option>
+       <option>PDX</option>
+       <option>LAS</option>
+     </select>
    </div>
 
-  <form class="new-chat">
+   <form class="new-chat">
     <h5>Airport Distance Tracker</h5>
     <input type="text" name="author" />
     
@@ -76,18 +76,39 @@
   </form>
 
 
- 
-
-   <button type="submit" id="buttonSubmit">Get Distance</button>
-   <button type="submit" id="reset">Reset</button>
 
 
- <div class="distanceDisplay">
-   
- </div>
- </div>
+  <button type="submit" id="buttonSubmit">Get Distance</button>
+  <button type="submit" id="reset">Reset</button>
 
- <script type="text/javascript">
+
+  <div class="distanceDisplay">
+
+
+   <div class="Rtable Rtable--2cols">
+
+     <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Eddard Stark</h3></div>
+     <div style="order:1;" class="Rtable-cell">Has a sword named Ice</div>
+     <div style="order:2;" class="Rtable-cell">No direwolf</div>
+     <div style="order:3;" class="Rtable-cell Rtable-cell--foot"><strong>Lord of Winterfell</strong></div>
+
+     <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Jon Snow</h3></div>
+     <div style="order:1;" class="Rtable-cell">Has a sword named Longclaw</div>
+     <div style="order:2;" class="Rtable-cell">Direwolf: Ghost</div>
+     <div style="order:3;" class="Rtable-cell Rtable-cell--foot"><strong>Knows nothing</strong></div>
+
+     <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Arya Stark</h3></div>
+     <div style="order:1;" class="Rtable-cell">Has a sword named Needle</div>
+     <div style="order:2;" class="Rtable-cell">Direwolf: Nymeria</div>
+     <div style="order:3;" class="Rtable-cell Rtable-cell--foot"><strong>No one</strong></div>
+
+   </div>
+    
+   </div>
+  </div>
+</div>
+
+<script type="text/javascript">
 
   // var departingDestination = "Selected Option Text :" + $('#departingDestination').find('option:selected').text();
   // console.log(departingDestination)
