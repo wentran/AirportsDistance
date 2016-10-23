@@ -65,9 +65,9 @@ body {
       border-radius: 25px;
       border: 2px solid #1E90FF;
       padding: 10px;
-      margin: 0 auto;
-      width: 70%;
-      height: 15%;
+      margin: 0 auto; 
+      width: 60%;
+      height: 10 %;
 
 }
 
@@ -79,12 +79,11 @@ body {
   border-width: 1px;
   color: #111;
   display: inline-block;
-  font-family: avenir, helvetica, roboto, arial, sans-serif;
+  font-family: roboto, arial, sans-serif;
   letter-spacing: 0.15em;
   margin-bottom: 0.5em;
   padding: 1em 1.5em;
   text-decoration: none;
-  text-transform: uppercase;
   -webkit-transition: color 0.4s, background-color 0.4s, border 0.4s;
   transition: color 0.4s, background-color 0.4s, border 0.4s; }
 
@@ -99,25 +98,53 @@ body {
   border: 1px solid #0074D9;
   -webkit-transition: background-color 0.3s, color 0.3s, border 0.3s;
   transition: background-color 0.3s, color 0.3s, border 0.3s; }
-  
-.btn--blue:link, .btn--blue:visited {
-  color: #fff;
-  background-color: #0074D9; }
 
-.btn--blue:hover, .btn--blue:focus {
-  color: #fff !important;
-  background-color: #0063aa;
-  border-color: #0063aa; }
+  .btn--gray:link, .btn--gray:visited {
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+    color: #555; }
 
-.btn--blue:active {
-  color: #fff;
-  background-color: #001F3F;
-  border-color: #001F3F; }
+  .btn--gray:hover, .btn--gray:focus {
+    background-color: #ddd;
+    border-color: #ddd;
+    color: #444; }
 
-/* Keep it mobile-first and responsive */
-@media screen and (min-width: 32em) {
-  .btn--full {
-    max-width: 16em !important; } }
+  .btn--gray:active {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: #444; }
+
+  .btn--gray-border:link, .btn--gray-border:visited {
+    background-color: #fff;
+    border-color: #555;
+    border-width: 2px;
+    color: #555; }
+
+  .btn--gray-border:hover, .btn--gray-border:focus {
+    background-color: #fff;
+    border-color: #ddd;
+    color: #777; }
+
+  .btn--gray-border:active {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: #444; }
+
+  .btn--gray-dark:link, .btn--gray-dark:visited {
+    background-color: #555;
+    color: #eee; }
+
+  .btn--gray-dark:hover, .btn--gray-dark:focus {
+    background-color: #333;
+    border-color: #333;
+    color: #eee; }
+
+  .btn--gray-dark:active {
+    background-color: #777;
+    border-color: #777;
+    color: #eee; }
+
+
 /* Tables
 ================================== */
 
@@ -127,10 +154,12 @@ table {
     border-spacing: 0;
     width: 100%;
     border: 1px solid #ddd;
+    margin-top: 5%;
 }
 
 th, td {
     border: none;
     text-align: left;
     padding: 8px;
+    border-bottom: 1px solid #ddd;
 }
