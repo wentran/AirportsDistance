@@ -59,6 +59,19 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+
+.row::after {
+    content: "";
+    clear: both;
+    width: 100%;
+    display: block;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+.col-1 {width: 58.33%;}
+.col-2 {width: 35%;}
 /*================================>> Dropdown <<========================================*/
 
 .dropdown-container {
