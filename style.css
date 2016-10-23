@@ -73,9 +73,51 @@ body {
 
 /* Button
 ================================== */
-.btn.btn-dark-blue{background-color: #237fbc; border-color: #237fbc; -webkit-box-shadow: 0 3px 0 #1a5c87; box-shadow: 0 3px 0 #1a5c87;}
-.btn.btn-dark-blue:hover{background-color:#166ea8;}
-.btn.btn-dark-blue:active{ top: 3px; outline: none; -webkit-box-shadow: none; box-shadow: none;}
+.btn, .btn:link, .btn:visited {
+  border-radius: 0.25em;
+  border-style: solid;
+  border-width: 1px;
+  color: #111;
+  display: inline-block;
+  font-family: avenir, helvetica, roboto, arial, sans-serif;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: color 0.4s, background-color 0.4s, border 0.4s;
+  transition: color 0.4s, background-color 0.4s, border 0.4s; }
+
+.btn:hover, .btn:focus {
+  color: #7FDBFF;
+  border: 1px solid #7FDBFF;
+  -webkit-transition: background-color 0.3s, color 0.3s, border 0.3s;
+  transition: background-color 0.3s, color 0.3s, border 0.3s; }
+
+.btn:active {
+  color: #0074D9;
+  border: 1px solid #0074D9;
+  -webkit-transition: background-color 0.3s, color 0.3s, border 0.3s;
+  transition: background-color 0.3s, color 0.3s, border 0.3s; }
+  
+.btn--blue:link, .btn--blue:visited {
+  color: #fff;
+  background-color: #0074D9; }
+
+.btn--blue:hover, .btn--blue:focus {
+  color: #fff !important;
+  background-color: #0063aa;
+  border-color: #0063aa; }
+
+.btn--blue:active {
+  color: #fff;
+  background-color: #001F3F;
+  border-color: #001F3F; }
+
+/* Keep it mobile-first and responsive */
+@media screen and (min-width: 32em) {
+  .btn--full {
+    max-width: 16em !important; } }
 /* Tables
 ================================== */
 
