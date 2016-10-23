@@ -10,6 +10,7 @@
   <!--dependencies-->
   <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
   <script src="flights.js"></script>
+  <script src="distancePlot.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcFexqzniegGeNyWO0q6Z4gM_3J0KaURs"></script>
   <script type="text/javascript" src="jquery.googlemap.js"></script>
 
@@ -57,14 +58,14 @@
   
   <div class="container">
     <div class="dropdown-container">
-      <select id='departingDestination'>
+      <select id='startAirport'>
         <option>JFK</option>
         <option>LAX</option>
         <option>PDX</option>
         <option>LAS</option>
       </select>
 
-      <select id="arrivingDestination">
+      <select id="arrivingAirport">
        <option>JFK</option>
        <option>LAX</option>
        <option>PDX</option>
@@ -81,7 +82,7 @@
   <table id="myTable" class="Rtable Rtable--2cols Rtable--collapse">
   <tr>
     <td> <div class="Rtable-cell Rtable-cell--alert">Routes </div></td>
-    <td> <div class="Rtable-cell Rtable-cell--highlight">distance</div></td>
+    <td> <div class="Rtable-cell Rtable-cell--highlight">Distance</div></td>
     </tr>
     </table>
     </div>
@@ -93,58 +94,37 @@
 
 <script type="text/javascript">
 
+
+
+ $(function() {
+    $("#map").googleMap(); // Map center (optional)
+               
+            
+           });
+
   $("#buttonSubmit").click( function (e) {
     e.preventDefault();
-    var arrivingDestination = ($("#arrivingDestination").val());
-    var departingDestination = ($("#departingDestination").val());
+    var arrivingAirport = ($("#arrivingAirport").val());
+    var startAirport = ($("#startAirport").val());
     var table = document.getElementById('myTable');
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
-    console.log(departingDestination,arrivingDestination)
-    result = IntentMedia.Distances.distance_between_airports(departingDestination,arrivingDestination )
+    console.log(startAirport,arrivingAirport)
+    result = IntentMedia.Distances.distance_between_airports(startAirport,arrivingAirport )
     console.log('======',result);
-  var route = departingDestination + " "+ 'to'+ " "+arrivingDestination;
-
-  // $('<div class="chat"/>');
-    // cell1 = $('<td> <div class="Rtable-cell Rtable-cell--alert"> </div></td>');
-    // cell2 = $('<td> <div class="Rtable-cell Rtable-cell--alert"> </div></td>');
+  var route = startAirport + " "+ 'to'+ " "+arrivingAirport;
 
 
     cell1.innerHTML = route;
     cell2.innerHTML = result;
 
-    // var $Routes = $("<p></p>");
-    // var $RoutesDisplay = $('.Rtable-cell--dark');
-    // var $distanceResult = $("<div></div>");
-    // var $distanceDisplay = $('.Rtable-cell--highlight');
+  
 
-    
-    // $Routes.text(route).appendTo($RoutesDisplay)
-    // $distanceResult.text(result).appendTo($distanceDisplay)
   });
 
-    //   $("#reset").click( function (e) {
-    //     e.preventDefault();
-    //     var arrivingDestination = ($("#arrivingDestination").val());
-    //     var departingDestination = ($("#departingDestination").val());
 
-    //   console.log(departingDestination,arrivingDestination)
-    //   result = IntentMedia.Distances.distance_between_airports(departingDestination,arrivingDestination )
-    // console.log('======',result);
-    //   });
 
-  $(function() {
-     $("#map").googleMap();
- // Map center (optional)
-           $("#map").addWay({
-                start: "15 avenue des champs Elysées 75008 Paris", // Postal address for the start marker (obligatory)
-              end:  [48.895651, 2.290569], // Postal Address or GPS coordinates for the end marker (obligatory)
-              route : 'way', // Block's ID for the route display (optional)
-             
-            });
-            })
-  
   </script>
 
 </body>
