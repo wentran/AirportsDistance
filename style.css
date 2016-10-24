@@ -2,18 +2,14 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   padding: 5px;
   font-family: Roboto;
 }
-
 /*----------------------------------------- 4) Header --------------------------------------------------*/
 .header {
   width: 100%;
 }
-
-
 .section {
   display: flex;
   padding: 0px;
@@ -21,7 +17,6 @@ body {
   height: 60px;
   background:#dbf0fd;
 }
-
 /*  COLUMN SETUP  */
 .col {
   display: block;
@@ -29,45 +24,35 @@ body {
   margin: 0.5% 0 0.1% 1%;
 }
 .col:first-child { margin-left: 1; }
-
 /*  GROUPING  */
 .group:before,
 .group:after { content:""; display:table; }
 .group:after { clear:both;}
 .group { zoom:1; /* For IE 6/7 */ }
-
 /*  GRID OF SIX  */
 .span_6_of_6 {
   width: 100%;
 }
-
 .span_5_of_6 {
     width: 83.06%;
 }
-
 .span_4_of_6 {
     width: 66.13%;
 }
-
 .span_3_of_6 {
     width: 49.2%;
 }
-
 .span_2_of_6 {
     width: 32.26%;
 }
-
 .span_1_of_6 {
     width: 15.33%;
 }
-
 /*  GO FULL WIDTH BELOW 480 PIXELS */
 @media only screen and (max-width: 480px) {
   .col {  margin: 1% 0 1% 0%; }
   .span_1_of_6, .span_2_of_6, .span_3_of_6, .span_4_of_6, .span_5_of_6, .span_6_of_6 { width: 100%; }
 }
-
-
 /*================================>> Dropdown Grid<<========================================*/
 .section1 {
   display: flex;
@@ -76,7 +61,6 @@ body {
   height: 60px;
   background: #FFFFFF;
 }
-
 /*  COLUMN SETUP  */
 .col {
   display: block;
@@ -84,13 +68,11 @@ body {
   margin: 0.5% 0 2  % 1%;
 }
 .col:first-child { margin-left: 1; }
-
 /*  GROUPING  */
 .group:before,
 .group:after { content:""; display:table; }
 .group:after { clear:both;}
 .group { zoom:1; /* For IE 6/7 */ }
-
 /*  GRID OF SIX  */
 .span_5_of_5 {
   width: 100%;
@@ -107,15 +89,11 @@ body {
 .span_1_of_5 {
   width: 18.72%;
 }
-
 /*  GO FULL WIDTH BELOW 480 PIXELS */
 @media only screen and (max-width: 480px) {
   .col {  margin: 1% 0 1% 0%; }
   .span_1_of_6, .span_2_of_6, .span_3_of_6, .span_4_of_6, .span_5_of_6, .span_6_of_6 { width: 100%; }
 }
-
-
-
 .logo-nav {
   padding: 10px 0 10px  0;
   -webkit-transition: all 0.3s;
@@ -126,15 +104,11 @@ body {
   height: 120%;
   display: block;
 }
-
-
-
 .container {
     margin-top: 70px;
     margin-right: auto;
     margin-left: auto;
 }
-
 .row::after {
     content: "";
     clear: both;
@@ -147,8 +121,6 @@ body {
 }
 .col-1 {width: 58%;}
 .col-2 {width: 35%;}
-
-
 .titleS {
    font-family: Futura;
     font-size: 24px;
@@ -159,23 +131,21 @@ body {
 }
 /*================================>> Dropdown <<========================================*/
 .dropdown-container{
-    width: 55%;
+    width: 50%;
     background: #FFFFFF;
-    border: 1px solid  #FAEBD7;
+    border: 1px solid     #FFDAB9;
     border-radius: 0.01em;
     height: 10%;
     padding-left: 10%;
     padding-right: 7%;
     margin-top: 5px;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-right: 20%;
 }
 .dropdown-container:before{
     content: "";
     display: block;
 }
-
-
 .selectMessage {
    font-family: Roboto;
     display: wrap;
@@ -201,7 +171,6 @@ body {
   padding: 7.5px 10px 7.5px 10px;
   text-decoration: none;
 }
-
 .btn:hover {
   background: #3cb0fd;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
@@ -213,17 +182,13 @@ body {
 }
 /* Map
     ================================== */
-
  .map {
   width: 100%; 
   height: 480px;
   margin-top: 6%;
 }
-
 /* Tables
 ================================== */
-
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -234,10 +199,9 @@ table {
     margin-left: 20%;
     margin-right: 0.1%; 
 }
-
 th, td {
     border: none;
-    text-align: left;
+    text-align: center;
     padding: 8px;
     border-bottom: 1px solid #ddd;
 }

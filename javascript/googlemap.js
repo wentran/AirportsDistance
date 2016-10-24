@@ -1,15 +1,9 @@
 $(function() {
-
 	$.fn.googleMap = function(props) {
 		props = $.extend( {
 			zoom : 10,
 			coords : [40.639751, -73.778925],
 			type : "ROADMAP",
-			langage : "english",
-			overviewMapControl:   false,
-			streetViewControl: false,
-			scrollwheel: false,
-			mapTypeControl: false
 		}, props);
 
 		switch(props.type) {
@@ -25,9 +19,6 @@ $(function() {
 				zoom: props.zoom,
 				center: new google.maps.LatLng(props.coords[0], props.coords[1]),
 				mapTypeId: props.type,
-				scrollwheel: props.scrollwheel,
-				overviewMapControl: props.overviewMapControl,
-				mapTypeControl: props.mapTypeControl
 			});
 		});
 		return this;

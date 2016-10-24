@@ -4,13 +4,13 @@ $(document).ready(function(){
     e.preventDefault();
     var arrivingAirport = ($("#arrivingAirport").val());
     var startAirport = ($("#startAirport").val());
-    var table = document.getElementById('myTable');
+    var table = document.getElementById('distanceTable');
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
-    console.log(startAirport,arrivingAirport)
+    // console.log(startAirport,arrivingAirport)
     result = (IntentMedia.Distances.distance_between_airports(startAirport,arrivingAirport )) + " " +"miles"
-    console.log('======',result);
+    // console.log('======',result);
     var route = startAirport + " "+ 'to'+ " "+arrivingAirport;
     cell1.innerHTML = route;
     cell2.innerHTML = result;
@@ -36,7 +36,7 @@ $.ajax({
             success : function(result) {
               arrivingAirportLat = result.airports[0].lat;
               arrivingAirportLong =result.airports[0].lng;
-              console.log(startAirportLat, startAirportLong, arrivingAirportLat, arrivingAirportLong)
+              // console.log(startAirportLat, startAirportLong, arrivingAirportLat, arrivingAirportLong)
                 initialize (startAirportLat, startAirportLong, arrivingAirportLat, arrivingAirportLong)
                     }
                 })
