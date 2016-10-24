@@ -16,7 +16,7 @@
   <script src="javascript/flights.js"></script>
   <script src="javascript/distancePlot.js"></script>
   <script src="javascript/getDistance.js"></script>
-  <script type="text/javascript" src="javascript/jquery.googlemap.js"></script>
+  <script type="text/javascript" src="javascript/googlemap.js"></script>
 
 
 
@@ -56,30 +56,25 @@
 <body>
   <div class="header">
     <div class="section group">
-    <div class="col span_1_of_6">
+      <div class="col span_1_of_6">
         <a href="index.html"><img alt="logo" class="logo-nav" src="images/logo.png"> </a>
       </div>
-    <div class="col span_1_of_6">
+      <div class="col span_1_of_6">
+      </div>
+      <div class="col span_1_of_6">
+      </div>
+      <div class="col span_1_of_6">
+        <div class="titleS">Airport Distances</div>
+      </div>
+      <div class="col span_1_of_6">
+      </div>
+      <div class="col span_1_of_6">
+      </div>
     </div>
-    <div class="col span_1_of_6">
-
-    </div>
-    <div class="col span_1_of_6">
-    <div class="titleS">Airport Distances</div>
-    </div>
-    <div class="col span_1_of_6">
-
-    </div>
-    <div class="col span_1_of_6">
-
-    </div>
-    </div>
-
   </div>
-  
   <div class="container">
-  <div class="selectMessage"> Choose airports from dropdowns</div>
-<div class="dropdown-container">
+    <div class="selectMessage"> Choose airports from dropdowns</div>
+    <div class="dropdown-container">
       <select id='startAirport'>
         <option>JFK</option>
         <option>LAX</option>
@@ -94,28 +89,23 @@
      </select>
      <button class="btn" type="submit" id="buttonSubmit">Get & Map Distance</button>
    </div>
-   </div>
-
-   <div class="row">
-     <div class="col-1">
-      <div id="map" class="map"></div>
-    </div>
-
-    <div class="col-2">
-      <div style="overflow-x:auto;">
-        <table id="myTable" class="Rtable Rtable--2cols Rtable--collapse">
-          <tr>
-            <td> <div class="Rtable-cell Rtable-cell--alert">Routes </div></td>
-            <td> <div class="Rtable-cell Rtable-cell--highlight">Distance</div></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <div id="messageErr"></div>
-
-
+ </div>
+ <div class="row">
+   <div class="col-1">
+    <div id="map" class="map"></div>
   </div>
+  <div class="col-2">
+    <div style="overflow-x:auto;">
+      <table id="myTable" class="Rtable Rtable--2cols Rtable--collapse">
+        <tr>
+          <td> <div class="Rtable-cell Rtable-cell--alert">Routes </div></td>
+          <td> <div class="Rtable-cell Rtable-cell--highlight">Distance</div></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="messageErr"></div>
 </div>
-
+</div>
 </body>
 </html>
