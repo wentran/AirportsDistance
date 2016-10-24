@@ -34,10 +34,12 @@
     height: 34px;
     -webkit-appearance: none;
     -moz-appearance: none;
+    margin-bottom: 15px;
     appearance: none;
     background: url("images/plane_icon.png") 96% / 15% no-repeat #eee;
 
   } 
+
   /*target Internet Explorer 9 and Internet Explorer 10:*/
   @media screen and (min-width:0\0) { 
     select {
@@ -76,31 +78,33 @@
   </div>
   
   <div class="container">
-
 <div class="dropdown-container">
-    <div class="section1 group">
-    <div class="col span_1_of_5">
+
+
+
+
+
       <select id='startAirport'>
         <option>JFK</option>
         <option>LAX</option>
         <option>PDX</option>
-        <option>LAS</option>
+        <option>LAS</option>  
       </select>
-    </div>  
-    
-    <div class="col span_1_of_5">
+
+
+          
+
+
       <select id="arrivingAirport">
-       <option>JFK</option>
        <option>LAX</option>
+       <option>JFK</option>
        <option>PDX</option>
        <option>LAS</option>
      </select>
-    </div>  
 
 
-     <button class="btn btn--m btn--gray-border" type="submit" id="buttonSubmit">Get Distance</button>
-     <button class="btn btn--m btn--white" type="submit" id="reset">Map Route</button>
 
+     <button class="btn" type="submit" id="buttonSubmit">Get Distance</button>
    </div>
    </div>
 
