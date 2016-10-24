@@ -6,13 +6,20 @@
 
   <!--styles-->
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
   <!--dependencies-->
   <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwignprvJDzFw50-nLit67hi_ct58TyuA"></script>
+
+  <!--JS files-->
   <script src="javascript/flights.js"></script>
   <script src="javascript/distancePlot.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwignprvJDzFw50-nLit67hi_ct58TyuA"></script>
+  <script src="javascript/getDistance.js"></script>
   <script type="text/javascript" src="javascript/jquery.googlemap.js"></script>
+
+
+
   <!-- in-line styling for dropdown-->
   <style>
    select {
@@ -20,7 +27,7 @@
     border: 1px solid #111;
     background-color: #F8F8FF;
     width: 150px;
-    padding: 5px 35px 5px 5px;
+    padding: 5px 15px 5px 25px;
     font-size: 16px;
     border: 1px solid #ccc;
     text-align: center;
@@ -46,120 +53,77 @@
 </head>
 <body>
   <div class="header">
-
-    <div class="for-sticky">
-      <!--LOGO-->
-      <div class="col-md-2 col-xs-6 logo">
-        <a href="index.html"><img alt="logo" class="logo-nav" src="images/aircraft.png"></a>
+    <div class="section group">
+    <div class="col span_1_of_6">
+        <a href="index.html"><img alt="logo" class="logo-nav" src="images/logo.png"> </a>
       </div>
+    <div class="col span_1_of_6">
     </div>
+    <div class="col span_1_of_6">
+
+    </div>
+    <div class="col span_1_of_6">
+    <div class="titleS">Airport Distances</div>
+    </div>
+    <div class="col span_1_of_6">
+
+    </div>
+    <div class="col span_1_of_6">
+
+    </div>
+    </div>
+
   </div>
   
   <div class="container">
-    <div class="dropdown-container">
+
+<div class="dropdown-container">
+    <div class="section1 group">
+    <div class="col span_1_of_5">
       <select id='startAirport'>
         <option>JFK</option>
         <option>LAX</option>
         <option>PDX</option>
         <option>LAS</option>
       </select>
-
+    </div>  
+    
+    <div class="col span_1_of_5">
       <select id="arrivingAirport">
        <option>JFK</option>
        <option>LAX</option>
        <option>PDX</option>
        <option>LAS</option>
      </select>
+    </div>  
 
-  <button class="btn btn--m btn--gray" type="submit" id="buttonSubmit">Get Distance</button>
-  <button class="btn btn--m btn--white" type="submit" id="reset">Map Route</button>
 
+     <button class="btn btn--m btn--gray-border" type="submit" id="buttonSubmit">Get Distance</button>
+     <button class="btn btn--m btn--white" type="submit" id="reset">Map Route</button>
+
+   </div>
    </div>
 
    <div class="row">
-
-   <div class="col-1">
-    <div id="map" style="width: 100%; height: 400px"></div>
+     <div class="col-1">
+      <div id="map" class="map"></div>
     </div>
 
     <div class="col-2">
-  <div style="overflow-x:auto;">
-  <table id="myTable" class="Rtable Rtable--2cols Rtable--collapse">
-  <tr>
-    <td> <div class="Rtable-cell Rtable-cell--alert">Routes </div></td>
-    <td> <div class="Rtable-cell Rtable-cell--highlight">Distance</div></td>
-    </tr>
-    </table>
+      <div style="overflow-x:auto;">
+        <table id="myTable" class="Rtable Rtable--2cols Rtable--collapse">
+          <tr>
+            <td> <div class="Rtable-cell Rtable-cell--alert">Routes </div></td>
+            <td> <div class="Rtable-cell Rtable-cell--highlight">Distance</div></td>
+          </tr>
+        </table>
+      </div>
     </div>
-    </div>
-
-
     <div id="messageErr"></div>
 
-  
+
   </div>
 </div>
-
-<script type="text/javascript">
-
-  $("#buttonSubmit").click( function (e) {
-    e.preventDefault();
-    var arrivingAirport = ($("#arrivingAirport").val());
-    var startAirport = ($("#startAirport").val());
-    var table = document.getElementById('myTable');
-    var row = table.insertRow(1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    console.log(startAirport,arrivingAirport)
-    result = IntentMedia.Distances.distance_between_airports(startAirport,arrivingAirport )
-    console.log('======',result);
-  var route = startAirport + " "+ 'to'+ " "+arrivingAirport;
-    cell1.innerHTML = route;
-    cell2.innerHTML = result;
-
-
-    var key = '5893b60d8bde3259e625ced3de9ef69f';
-      $.ajax({
-        type: 'GET',
-        url : "https://airport.api.aero/airport/" + startAirport + "?user_key=" + key,
-        dataType : "jsonp",
-        success : function(result) {
-          startAirportLat = result.airports[0].lat;
-          startAirportLong = result.airports[0].lng;
-          console.log(startAirportLat,startAirportLong)
-          // getArrivingAirportLongLat(arrivingAirport, key, startAirportLat, startAirportLong);
-          if (startAirport === false)
-            $("#messageErr").html("please pick a different arrivingDestination")
-          else {
-            $.ajax({
-              type: 'GET',
-              url : "https://airport.api.aero/airport/" + arrivingAirport + "?user_key=" + key,
-              dataType : "jsonp",
-              success : function(result) {
-                arrivingAirportLat = result.airports[0].lat;
-                arrivingAirportLong =result.airports[0].lng;
-                console.log(startAirportLat, startAirportLong, arrivingAirportLat, arrivingAirportLong)
-          // openGoogleMaps (startAirportLat, startAirportLong, arrivingAirportLat, arrivingAirportLong);
-          initialize (startAirportLat, startAirportLong, arrivingAirportLat, arrivingAirportLong)
-          // initialize(40.639751, 73.778925, 33.942536,118.408075)
-        }
-
-
-      })
-          }
-
-        }
-      // get arriving airport longLat
-
-    });
-
-  
-
-  });
-
-
-
-  </script>
 
 </body>
 </html>
