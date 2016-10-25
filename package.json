@@ -1,0 +1,27 @@
+{
+  "name": "distance_between_airports",
+  "version": "1.0.0",
+  "description": "airport distance tracker and router",
+  "main": "index.html",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wentran/AirportsDistance.git"
+  },
+  "keywords": [
+    "airport"
+  ],
+  "author": "Wen Tran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wentran/AirportsDistance/issues"
+  },
+  "homepage": "https://github.com/wentran/AirportsDistance#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0"
+  }
+}
