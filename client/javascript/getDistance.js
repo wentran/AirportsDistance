@@ -9,7 +9,7 @@ $(document).ready(function() {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     result = (IntentMedia.distance_between_airports(startAirport,arrivingAirport )) + " " +"miles"
-    var route = startAirport + " "+ 'to'+ " "+arrivingAirport;
+    var route = startAirport + " "+ 'to'+ " "+ arrivingAirport;
     cell1.innerHTML = route;
     cell2.innerHTML = result;
 
