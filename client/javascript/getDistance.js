@@ -1,6 +1,6 @@
 
-$(document).ready(function(){
-  $("#buttonSubmit").click( function (e) {
+$(document).ready(function() {
+  $("#buttonSubmit").click(function(e) {
     e.preventDefault();
     var arrivingAirport = ($("#arrivingAirport").val());
     var startAirport = ($("#startAirport").val());
@@ -8,9 +8,7 @@ $(document).ready(function(){
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
-    // console.log(startAirport,arrivingAirport)
-    result = (IntentMedia.Distances.distance_between_airports(startAirport,arrivingAirport )) + " " +"miles"
-    // console.log('======',result);
+    result = (IntentMedia.distance_between_airports(startAirport,arrivingAirport )) + " " +"miles"
     var route = startAirport + " "+ 'to'+ " "+arrivingAirport;
     cell1.innerHTML = route;
     cell2.innerHTML = result;
