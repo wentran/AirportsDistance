@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+
   $("#buttonSubmit").click(function(e) {
     e.preventDefault();
     var arrivingAirport = ($("#arrivingAirport").val());
