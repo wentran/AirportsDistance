@@ -5,7 +5,8 @@
   <title>Airport Distance Tracker</title>
 
   <!--styles-->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/autocomplete.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 
@@ -65,23 +66,11 @@
   </div>
   <div class="search_box_container">
     <div class="selectMessage"> Choose airports from dropdowns</div>
-    <form id="example-mail">
-        <input type="text" name="term" id="term" placeholder="Airport search" />
-      </form>
+
 
     <div class="dropdown-container">
-      <select id='startAirport'>
-        <option>JFK</option>
-        <option>LAX</option>
-        <option>PDX</option>
-        <option>LAS</option>  
-      </select>
-      <select id="arrivingAirport">
-       <option>LAX</option>
-       <option>JFK</option>
-       <option>PDX</option>
-       <option>LAS</option>
-     </select>
+    <input id="startAirport" />
+      <input id="arrivingAirport" />
      <button class="btn" type="submit" id="buttonSubmit">Get & Map Distance</button>
    </div>
  
@@ -118,25 +107,23 @@
 <script type="text/javascript">
   var options = {
       url: "data/airports.json",
+      getValue: "code",
+            list: {
+              match: {
+                enabled: true
+              },
+              maxNumberOfElements: 10
+            },
+            template: {
+              type: "custom",
+              method: function(value, item) {
+                return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + value;
+              }
+            }
+          };
 
-      getValue: "name",
-
-      template: {
-          type: "description",
-          fields: {
-              description: "code"
-          }
-      },
-
-      list: {
-          match: {
-              enabled: true
-          }
-      },
-      theme: "plate-dark"
-  };
-
-  $("#example-mail").easyAutocomplete(options);
+  $("#startAirport").easyAutocomplete(options);
+  $("#arrivingAirport").easyAutocomplete(options);
 </script>
 </body>
 
