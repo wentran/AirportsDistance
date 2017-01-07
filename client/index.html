@@ -115,7 +115,7 @@
 <script type="text/javascript">
   var options = {
       url: "data/airports.json",
-      getValue: "code",
+      getValue: "name",
             list: {
               match: {
                 enabled: true
@@ -125,7 +125,8 @@
             template: {
               type: "custom",
               method: function(value, item) {
-                return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + value;
+                console.log('val---',value, 'code---->',item.code)
+                return "<span class='flag flag-" + (item.code).toLowerCase() + "' ></span>" + item.code;
               }
             }
           };
