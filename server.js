@@ -1,7 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var cors = require("cors");
-var index = require('./routes');
 var cors = require("cors");
 var http = require('http');
 
@@ -15,7 +14,7 @@ var server = http.Server(app);
 
 app.use("/", express.static(__dirname + "/client/"));
 app.use(cors());
-app.get('/airports', index.airports);
+
 
 
 
